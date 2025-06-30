@@ -1,65 +1,35 @@
 # docapp
 
-This repository contains a minimal appointment booking system for doctors and patients.
+This project is a small doctor appointment booking system. The backend is built with **Node.js/Express** and a simple **React** frontend interacts with it.
 
 ## Features
 
-- Doctors can register and mark available dates and times each month.
-- Patients can register, view available slots, and book appointments.
-- Doctors can view all booked appointments and reject suspicious ones.
-- Doctors can send WhatsApp reminders or promotions to patients (simulated with console output).
+- Doctors register and provide available time slots.
+- Patients register, view open slots and book appointments.
+- Doctors can review and reject appointments if necessary.
+- WhatsApp reminders and promotions are simulated with console output.
 
-## Usage
+## Running locally
 
-Install dependencies and run the CLI:
+### Backend
 
-```bash
-python -m app.cli <command> [options]
-```
-
-### Web server
-
-Install Flask and run the API server:
+Install dependencies and start the API server:
 
 ```bash
-pip install -r requirements.txt
-python -m app.server
+cd backend
+npm install
+npm start
 ```
 
-The server listens on `http://localhost:5000` and exposes JSON endpoints used by the frontend.
+The server listens on `http://localhost:3001`.
 
 ### Frontend
 
-Open `frontend/index.html` in a browser. The page uses simple JavaScript `fetch` calls to interact with the API server.
+Open `frontend/index.html` in your browser. The page uses React (loaded from a CDN) to call the API server.
 
-### Deploying to GitHub
+## Example workflow
 
-1. Create a repository on GitHub and push the contents of this project.
-2. Enable GitHub Pages using the `frontend/` directory to serve the web interface.
-3. Deploy the backend to your preferred hosting provider and update `frontend/app.js` if the API URL changes.
-
-Example workflow:
-
-1. Register a doctor:
-   ```bash
-   python -m app.cli register_doctor "Dr. Smith"
-   ```
-2. Add availability:
-   ```bash
-   python -m app.cli add_availability 1 2024-05-01T09:00 2024-05-01T10:00
-   ```
-3. Register a patient:
-   ```bash
-   python -m app.cli register_patient "Alice" "+15550001"
-   ```
-4. List available slots and book an appointment:
-   ```bash
-   python -m app.cli list_slots 1
-   python -m app.cli book 1 1 2024-05-01T09:00
-   ```
-5. Doctor views appointments and sends a reminder:
-   ```bash
-   python -m app.cli view_appointments 1
-   python -m app.cli remind 1
-   ```
-```
+1. Register a doctor using the form.
+2. Add availability for that doctor (comma separated timestamps in `YYYY-MM-DDTHH:MM` format).
+3. Register a patient and book an appointment from the available slots.
+4. View appointments and optionally reject or send reminders/promotions.
