@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>DocApp</title>
+  <script defer src="app.js"></script>
+</head>
+<body>
+  <h1>Doctor Appointment App</h1>
+  <section>
+    <h2>Register Doctor</h2>
+    <input id="doc-name" placeholder="Name" />
+    <button onclick="registerDoctor()">Register</button>
+    <div id="doc-result"></div>
+  </section>
+  <section>
+    <h2>Register Patient</h2>
+    <input id="pat-name" placeholder="Name" />
+    <input id="pat-phone" placeholder="Phone" />
+    <button onclick="registerPatient()">Register</button>
+    <div id="pat-result"></div>
+  </section>
+  <section>
+    <h2>Add Availability</h2>
+    <input id="avail-doc" placeholder="Doctor ID" />
+    <input id="avail-times" placeholder="Times comma separated (YYYY-MM-DDTHH:MM)" size="60" />
+    <button onclick="addAvailability()">Add</button>
+  </section>
+  <section>
+    <h2>List Slots</h2>
+    <input id="slot-doc" placeholder="Doctor ID" />
+    <button onclick="listSlots()">List</button>
+    <pre id="slot-result"></pre>
+  </section>
+  <section>
+    <h2>Book Appointment</h2>
+    <input id="book-doc" placeholder="Doctor ID" />
+    <input id="book-pat" placeholder="Patient ID" />
+    <input id="book-time" placeholder="YYYY-MM-DDTHH:MM" />
+    <button onclick="book()">Book</button>
+    <div id="book-result"></div>
+  </section>
+  <section>
+    <h2>View Appointments</h2>
+    <input id="view-doc" placeholder="Doctor ID" />
+    <button onclick="viewAppointments()">View</button>
+    <pre id="view-result"></pre>
+  </section>
+  <section>
+    <h2>Reject Appointment</h2>
+    <input id="rej-id" placeholder="Appointment ID" />
+    <input id="rej-reason" placeholder="Reason" />
+    <button onclick="rejectAppt()">Reject</button>
+  </section>
+  <section>
+    <h2>Send Reminder</h2>
+    <input id="rem-id" placeholder="Appointment ID" />
+    <button onclick="remind()">Send</button>
+  </section>
+  <section>
+    <h2>Send Promotion</h2>
+    <input id="promo-id" placeholder="Patient ID" />
+    <input id="promo-msg" placeholder="Message" />
+    <button onclick="promo()">Send</button>
+  </section>
+</body>
+</html>
