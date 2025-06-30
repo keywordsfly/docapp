@@ -25,7 +25,9 @@ The server listens on `http://localhost:3001`.
 
 ### Frontend
 
-Open `frontend/index.html` in your browser. The page uses React (loaded from a CDN) to call the API server.
+The backend now also serves the static React files. After starting the server,
+open `http://localhost:3001/index.html` (or simply `http://localhost:3001/`)
+in your browser to use the app.
 
 ## Example workflow
 

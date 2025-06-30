@@ -1,10 +1,12 @@
 const express = require('express');
 const cors = require('cors');
+const path = require('path');
 const { load, save } = require('./storage');
 
 const app = express();
 app.use(cors());
 app.use(express.json());
+app.use(express.static(path.join(__dirname, '../frontend')));
 
 function getData() { return load(); }
 function setData(data) { save(data); }
